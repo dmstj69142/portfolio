@@ -10,6 +10,17 @@
     font-weight: normal;
     font-style: normal;
 }
+body {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration-line: none;
+    color: inherit;
+}
 * {
     font-family: 'NPSfontBold';
 }
@@ -101,6 +112,7 @@
     line-height: 150px;
     width: 100%;
     text-align: center;
+    cursor: default;
 }
 
 .main_title span {
@@ -227,58 +239,6 @@
         transform: rotate(-5deg) translateX(2%);
     }
 }
-.leaf_box {
-    width: 50%;
-    height: 15%;
-    position: absolute;
-    top: 26%;
-    right: 3%;
-}
-.leaf {
-    width: 70px;
-    float: right;
-}
-.leaf1 {
-    transform: translate(20px,0);
-    animation: leaf1 2s infinite;
-}
-@keyframes leaf1 {
-    0% {
-        
-    }
-    20% {
-        
-    }
-    40% {
-        
-    }
-    60% {
-        
-    }
-    80% {
-        
-    }
-    100% {
-        
-    }
-
-}
-.leaf2 {
-    top: 0;
-    right: 0;
-}
-.leaf3 {
-    top: 0;
-    right: 0;
-}
-.leaf4 {
-    top: 0;
-    right: 0;
-}
-.leaf5 {
-    top: 25%;
-    right: 0;
-}
 .img_box {
     float: left;
     width: 460px;
@@ -390,6 +350,19 @@
 .edu_date {
     padding: 10px 30px;
 }
+.btn {
+    border: 3px solid #e9d6ce;
+    padding: 13px;
+    display: inline-block;
+    margin-top: 30px;
+    border-radius: 40px;
+}
+.btn_img {
+    width: 20px;
+    height: 18px;
+    margin-right: 7px;
+}
+
 #sec2 {
     width: 100%;
     padding-top: 130px;
@@ -459,17 +432,17 @@
         height: 0;
     }
     100% {
-        height: 450px;
+        height: 90%;
     }
 }
 .chart_js {
-    height: 70%;
+    height: 75%;
     border: 1px solid #ffcc56;
     background-color: #fff5dd;
     /* animation: chart2 1s; */
 }
 .chart_jq {
-    height: 70%;
+    height: 75%;
     border: 1px solid #4bc0c0;
     background-color: #dbf2f2;
     /* animation: chart2 1s; */
@@ -483,31 +456,21 @@
         height: 0;
     }
     100% {
-        height: 380px;
+        height: 75%;
     }
 }
 .chart_sql {
-    height: 60%;
+    height: 70%;
     border: 1px solid #68b9f0;
     background-color: #d7ecfb;
     /* animation: chart3 1s; */
 }
-.chart_ps {
-    height: 60%;
-    border: 1px solid #b28aff;
-    background-color: #ebe0ff;
-    /* animation: chart3 1s; */
-}
-/* .chart_sql:hover,
-.chart_ps:hover {
-    animation: chart3 1s;
-} */
 @keyframes chart3 {
     0% {
         height: 0;
     }
     100% {
-        height: 280px;
+        height: 70%;
     }
 }
 .html_per {
@@ -534,10 +497,11 @@
 
 .sec3_content {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
 }
 .portfolio_content_box {
-    width: 100%;
+    width: calc(100% / 2);
     cursor: pointer;
 }
 
@@ -553,20 +517,6 @@
     position: relative;
     transition: all 0.5s;
 }
-/* .portfolio_mobile {
-    width: 320px;
-    height: 299px;
-    margin: 20px auto 0;
-    padding: 20px;
-    box-sizing: border-box;
-    display: none;
-    transition: all 0.5s;
-}
-.portfolio_mobile img {
-    width: calc((100% - 10px * 4) / 2);
-    float: left;
-    margin: 0 10px;
-} */
 .desktop_img1 {
     width: 323px;
     height: 181px;
@@ -588,6 +538,13 @@
     opacity: 0;
     transition: all 0.5s;
 }
+.main_mobile {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .bg_w {
     background: #ffffff9e;
 }
@@ -612,16 +569,40 @@
     font-weight: 500;
     margin: 15px;
 }
+.port_content_box:nth-child(1) {
+    text-align: center;
+}
 .port_content_box {
-    overflow: hidden;
     padding: 10px 0 0;
+}
+.port_content_box img {
+    width: 40px;
+    margin: 5px;
+}
+.port_img_box {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 10px;
+}
+.port_img_box li {
+    padding: 8px 10px;
+    box-sizing: border-box;
+    background-color: #e9d6ce;
+    background-image: linear-gradient(to bottom right, #f3eeec,#f9f5f1, #fff);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px gray;
 }
 .port_intro_title {
     margin: 10px 0;
     font-weight: 500;
 }
 .port_intro {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 23px;
     word-break: keep-all;
 }
@@ -643,6 +624,7 @@
     display: none;
     cursor: default;
     overflow: auto;
+    touch-action: none;
 }
 .popup_btn_box {
     width: 70%;
@@ -694,6 +676,10 @@
 }
 .bg_ml {
     background-color: #A785EF;
+    color: #fff;
+}
+.bg_bs {
+    background-color: #c4aa77;
     color: #fff;
 }
 .popup_detail_img_box {
@@ -750,13 +736,16 @@
     background: #A785EF; /* 스크롤바의 색상 */
 }
 #popup3::-webkit-scrollbar-thumb {
+    background: #c4aa77; /* 스크롤바의 색상 */
+}
+#popup4::-webkit-scrollbar-thumb {
     background: #bfe5ea; /* 스크롤바의 색상 */
 }
 
 .popup::-webkit-scrollbar-track {
     background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
 }
-
+.scrollLock { overflow: hidden; }
 
 #sec4 {
     padding: 150px 0;
